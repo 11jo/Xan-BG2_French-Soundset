@@ -1,0 +1,12 @@
+del override\O#XAN1*.wav
+del override\O#XAN2*.wav
+del override\O#XAN05*.wav
+del override\O#XAN06*.wav
+del override\O#XAN07*.wav
+del override\O#XAN08*.wav
+del override\O#XAN09*.wav
+del override\O#XAN045.wav
+del override\O#XAN046.wav
+del override\O#XAN047.wav
+del override\O#XAN048.wav
+del override\O#XAN049.wav
