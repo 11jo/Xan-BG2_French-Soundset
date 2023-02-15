@@ -2,10 +2,37 @@ BACKUP ~XanFrenchMini\backup~
 AUTHOR ~http://forums.pocketplane.net~
 VERSION ~v2~
 
-AUTO_TRA ~XanFrenchMini/%s~
+README ~XanFrenchMini/language/%LANGUAGE%/ReadMe.txt~
 
-LANGUAGE ~English~ ~English~ ~XanFrenchMini/English/Setup-XanFrenchMini.tra~
-LANGUAGE ~French~ ~French~ ~XanFrenchMini/French/Setup-XanFrenchMini.tra~
+ALWAYS	
+
+			//Copies tra files into the autotra-folder (to leave the originals untouched)
+    DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+      COPY ~XanFrenchMini/language/English~  ~XanFrenchMini/language/autotra/%LANGUAGE%~
+      COPY ~XanFrenchMini/language/%LANGUAGE%~  ~XanFrenchMini/language/autotra/%LANGUAGE%~
+    END
+
+    LAF autotra_workaround END
+
+
+//  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+
+ ACTION_DEFINE_ARRAY fl#reload BEGIN Setup-XanFrenchMini END
+
+    LAF HANDLE_CHARSETS
+      INT_VAR
+        infer_charsets = 1
+      STR_VAR
+        tra_path = EVAL ~XanFrenchMini/language/autotra~
+//        noconvert_array = fl#noconvert
+        reload_array = fl#reload
+	END
+END
+
+AUTO_TRA ~XanFrenchMini/language/autotra/%s~
+
+LANGUAGE ~English~ ~English~ ~XanFrenchMini/language/English/Setup-XanFrenchMini.tra~
+LANGUAGE ~French~ ~French~ ~XanFrenchMini/language/French/Setup-XanFrenchMini.tra~
 
 BEGIN @0
 
@@ -17,108 +44,103 @@ BEGIN @1
 COPY ~XanFrenchMini\Audio~ ~override~
 
 COPY_EXISTING ~O#Xan09.cre~ ~override~
-SAY NAME1 ~Xan~
-SAY NAME2 ~Xan~
+SAY NAME1 @51 /* Xan */
+SAY NAME2 @51 /* Xan */
 SAY INITIAL_MEETING ~~
-SAY MORALE ~Nous sommes tous perdus, fuyons tant qu'il est encore temps.~ [O#XAN003]
-SAY HAPPY ~Peut-être survivrons-nous plus longtemps que je ne l'aurais cru.~ [O#XAN004]
-SAY UNHAPPY_ANNOYED ~Ce groupe est particulièrement lamentable aujourd'hui !~ [O#XAN005]
-SAY UNHAPPY_SERIOUS ~Continuons à nous comporter aussi mal et nous mériterons notre perdition.~ [O#XAN006]
-SAY UNHAPPY_BREAKING ~Je ne peux pas souscrire à ces actes ! Je dois me retirer de cette assemblée de barbares.~ [O#XAN007]
-SAY LEADER ~Tant que je serai responsable du groupe, je m'engage à ce que nous ne nous fassions pas TOUS tuer.~ [O#XAN008]
-SAY TIRED ~Je tomberai de fatigue avant d'avoir le temps de m'effondrer sur le champ de bataille.~ [O#XAN009]
-SAY BORED ~S'il est écrit que nous allons échouer, pouvons-nous au moins faire en sorte que ce soit rapide ?!~ [O#XAN010]
-SAY BATTLE_CRY1 ~En avant, prenons la direction de l'absurde !~ [O#XAN011]
-SAY BATTLE_CRY2 ~Avec vous comme compagnon, mais qui a besoin d'ennemis ?~ [O#XAN012]
-SAY BATTLE_CRY3 ~Notre croisade est tellement vaine.~ [O#XAN013]
-SAY BATTLE_CRY4 ~Votre bêtise vous perdra.~ [O#XAN014]
-SAY BATTLE_CRY5 ~Attendons la mort !~ [O#XAN015]
+SAY MORALE @53 /* Nous sommes tous perdus, fuyons tant qu'il est encore temps. */
+SAY HAPPY @54 /* Peut-être survivrons-nous plus longtemps que je ne l'aurais cru. */
+SAY UNHAPPY_ANNOYED @55 /* Ce groupe est particulièrement lamentable aujourd'hui ! */
+SAY UNHAPPY_SERIOUS @56 /* Continuons à nous comporter aussi mal et nous mériterons notre perdition. */
+SAY UNHAPPY_BREAKING @57 /* Je ne peux pas souscrire à ces actes ! Je dois me retirer de cette assemblée de barbares. */
+SAY LEADER @58 /* Tant que je serai responsable du groupe, je m'engage à ce que nous ne nous fassions pas TOUS tuer. */
+SAY TIRED @59 /* Je tomberai de fatigue avant d'avoir le temps de m'effondrer sur le champ de bataille. */
+SAY BORED @60 /* S'il est écrit que nous allons échouer, pouvons-nous au moins faire en sorte que ce soit rapide ?! */
+SAY BATTLE_CRY1 @61 /* En avant, prenons la direction de l'absurde ! */
+SAY BATTLE_CRY2 @62 /* Avec vous comme compagnon, mais qui a besoin d'ennemis ? */
+SAY BATTLE_CRY3 @63 /* Notre croisade est tellement vaine. */
+SAY BATTLE_CRY4 @64 /* Votre bêtise vous perdra. */
+SAY BATTLE_CRY5 @65 /* Attendons la mort ! */
 SAY DAMAGE ~~ [O#XAN016]
 SAY DYING ~~ [O#XAN017]
-SAY HURT ~Mes blessures sont trop graves, je suis un homme mort.~ [O#XAN018]
-SAY AREA_FOREST ~La grandeur de la forêt me fait sentir ma petitesse.~ [O#XAN019]
-SAY AREA_CITY ~L'agitation des grandes villes me fait sentir ma dérision.~ [O#XAN020]
-SAY AREA_DUNGEON ~J'ai croupi trop longtemps dans cette horrible cave.~ [O#XAN021]
-SAY AREA_DAY ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN022]
-SAY AREA_NIGHT ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN023]
-SAY SELECT_COMMON1 ~Nous courons tous à la ruine.~ [O#XAN024]
-SAY SELECT_COMMON2 ~La vie est tellement vaine.~ [O#XAN025]
-SAY SELECT_COMMON3 ~Notre quête est perdue d'avance.~ [O#XAN026]
-SAY SELECT_COMMON4 ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN027]
-SAY SELECT_COMMON5 ~Baissons les bras.~ [O#XAN028]
-SAY SELECT_COMMON6 ~Notre croisade est tellement vaine.~ [O#XAN029]
-SAY SELECT_ACTION1 ~Quelle importance ?~ [O#XAN030]
-SAY SELECT_ACTION2 ~Pfff, pourquoi ?~ [O#XAN031]
-SAY SELECT_ACTION3 ~Pourquoi pas.~ [O#XAN032]
-SAY SELECT_ACTION4 ~Tout et n'importe quoi.~ [O#XAN033]
-SAY SELECT_ACTION5 ~C'est peine perdue.~ [O#XAN034]
-SAY SELECT_ACTION6 ~C'est peine perdue.~ [O#XAN035]
-SAY SELECT_ACTION7 ~Je ferai de mon mieux, mais ne vous attendez pas à grand chose.~ [O#XAN036]
-SAY SELECT_RARE1 ~Nous nous leurrons en croyant que notre pitoyable groupe fera le poids face à l'ennemi.~ [O#XAN037]
-SAY SELECT_RARE2 ~Epargnons-nous un vain effort. Baissons les bras et attendons la mort.~ [O#XAN038]
-SAY CRITICAL_HIT ~J'irai même jusqu'à croire que l'on a une chance !~ [O#XAN039]
-SAY CRITICAL_MISS ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN040]
-SAY TARGET_IMMUNE ~C'est peine perdue.~ [O#XAN041]
-SAY INVENTORY_FULL ~C'est peine perdue.~ [O#XAN042]
-SAY SPELL_DISRUPTED ~Lamentable !!~ [O#XAN043]
-SAY BIO ~Lorsque vous l'interrogez sur son passé, XAN vous parle, la nostalgie dans la voix, de son pays d'origine, le fief elfique d'Evereska, ainsi que de son rôle en tant que Grismanteau. Visiblement, il a été envoyé en Amn pour accomplir une mission confiée par son peuple, mais il refuse de vous en parler davantage. D'après ce qu'il a pu évoquer, sa quête semble être de taille, et Xan l'aborde avec une bonne dose d'appréhension. Mais vous avez l'impression qu'il en est de même avec tout. Il a consacré sa vie à accroître sa maîtrise de la magie et est devenu un magicien talentueux. Mais ce zèle lui a laissé peu de temps libre pour se faire des amis ou pour pratiquer d'autres passe-temps. Il semble être très compétent, mais il n'exerce peut-être pas une bonne influence sur le moral du groupe.~
+SAY HURT @68 /* Mes blessures sont trop graves, je suis un homme mort. */
+SAY AREA_FOREST @69 /* La grandeur de la forêt me fait sentir ma petitesse. */
+SAY AREA_CITY @70 /* L'agitation des grandes villes me fait sentir ma dérision. */
+SAY AREA_DUNGEON @71 /* J'ai croupi trop longtemps dans cette horrible cave. */
+SAY AREA_DAY @72 /* Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour. */
+SAY AREA_NIGHT @73 /* Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour. */
+SAY SELECT_COMMON1 @74 /* Nous courons tous à la ruine. */
+SAY SELECT_COMMON2 @75 /* La vie est tellement vaine. */
+SAY SELECT_COMMON3 @76 /* Notre quête est perdue d'avance. */
+SAY SELECT_COMMON4 @77 /* Si j'avais eu besoin de votre avis, je vous l'aurais demandé. */
+SAY SELECT_COMMON5 @78 /* Baissons les bras. */
+SAY SELECT_COMMON6 @79 /* Notre croisade est tellement vaine. */
+SAY SELECT_ACTION1 @80 /* Quelle importance ? */
+SAY SELECT_ACTION2 @81 /* Pfff, pourquoi ? */
+SAY SELECT_ACTION3 @82 /* Pourquoi pas. */
+SAY SELECT_ACTION4 @83 /* Tout et n'importe quoi. */
+SAY SELECT_ACTION5 @84 /* C'est peine perdue. */
+SAY SELECT_ACTION6 @85 /* C'est peine perdue. */
+SAY SELECT_ACTION7 @86 /* Je ferai de mon mieux, mais ne vous attendez pas à grand chose. */
+SAY SELECT_RARE1 @87 /* Nous nous leurrons en croyant que notre pitoyable groupe fera le poids face à l'ennemi. */
+SAY SELECT_RARE2 @88 /* Epargnons-nous un vain effort. Baissons les bras et attendons la mort. */
+SAY CRITICAL_HIT @89 /* J'irai même jusqu'à croire que l'on a une chance ! */
+SAY CRITICAL_MISS @90 /* Si j'avais eu besoin de votre avis, je vous l'aurais demandé. */
+SAY TARGET_IMMUNE @91 /* C'est peine perdue. */
+SAY INVENTORY_FULL @92 /* C'est peine perdue. */
+SAY SPELL_DISRUPTED @93 /* Lamentable !! */
+SAY BIO @94 /* Lorsque vous l'interrogez sur son passé, XAN vous parle, la nostalgie dans la voix, de son pays d'origine, le fief elfique d'Evereska, ainsi que de son rôle en tant que Grismanteau. Visiblement, il a été envoyé en Amn pour accomplir une mission confiée par son peuple, mais il refuse de vous en parler davantage. D'après ce qu'il a pu évoquer, sa quête semble être de taille, et Xan l'aborde avec une bonne dose d'appréhension. Mais vous avez l'impression qu'il en est de même avec tout. Il a consacré sa vie à accroître sa maîtrise de la magie et est devenu un magicien talentueux. Mais ce zèle lui a laissé peu de temps libre pour se faire des amis ou pour pratiquer d'autres passe-temps. Il semble être très compétent, mais il n'exerce peut-être pas une bonne influence sur le moral du groupe. */
 
 
 ACTION_IF FILE_EXISTS ~data/25dialog.bif~ THEN
 BEGIN
 COPY_EXISTING ~O#Xan25.cre~ ~override~
-SAY NAME1 ~Xan~
-SAY NAME2 ~Xan~
+SAY NAME1 @51 /* Xan */
+SAY NAME2 @51 /* Xan */
 
 SAY INITIAL_MEETING ~~
-SAY MORALE ~Nous sommes tous perdus, fuyons tant qu'il est encore temps.~ [O#XAN003]
-SAY HAPPY ~Peut-être survivrons-nous plus longtemps que je ne l'aurais cru.~ [O#XAN004]
-SAY UNHAPPY_ANNOYED ~Ce groupe est particulièrement lamentable aujourd'hui !~ [O#XAN005]
-SAY UNHAPPY_SERIOUS ~Continuons à nous comporter aussi mal et nous mériterons notre perdition.~ [O#XAN006]
-SAY UNHAPPY_BREAKING ~Je ne peux pas souscrire à ces actes ! Je dois me retirer de cette assemblée de barbares.~ [O#XAN007]
-SAY LEADER ~Tant que je serai responsable du groupe, je m'engage à ce que nous ne nous fassions pas TOUS tuer.~ [O#XAN008]
-SAY TIRED ~Je tomberai de fatigue avant d'avoir le temps de m'effondrer sur le champ de bataille.~ [O#XAN009]
-SAY BORED ~S'il est écrit que nous allons échouer, pouvons-nous au moins faire en sorte que ce soit rapide ?!~ [O#XAN010]
-SAY BATTLE_CRY1 ~En avant, prenons la direction de l'absurde !~ [O#XAN011]
-SAY BATTLE_CRY2 ~Avec vous comme compagnon, mais qui a besoin d'ennemis ?~ [O#XAN012]
-SAY BATTLE_CRY3 ~Notre croisade est tellement vaine.~ [O#XAN013]
-SAY BATTLE_CRY4 ~Votre bêtise vous perdra.~ [O#XAN014]
-SAY BATTLE_CRY5 ~Attendons la mort !~ [O#XAN015]
+SAY MORALE @53 /* Nous sommes tous perdus, fuyons tant qu'il est encore temps. */
+SAY HAPPY @54 /* Peut-être survivrons-nous plus longtemps que je ne l'aurais cru. */
+SAY UNHAPPY_ANNOYED @55 /* Ce groupe est particulièrement lamentable aujourd'hui ! */
+SAY UNHAPPY_SERIOUS @56 /* Continuons à nous comporter aussi mal et nous mériterons notre perdition. */
+SAY UNHAPPY_BREAKING @57 /* Je ne peux pas souscrire à ces actes ! Je dois me retirer de cette assemblée de barbares. */
+SAY LEADER @58 /* Tant que je serai responsable du groupe, je m'engage à ce que nous ne nous fassions pas TOUS tuer. */
+SAY TIRED @59 /* Je tomberai de fatigue avant d'avoir le temps de m'effondrer sur le champ de bataille. */
+SAY BORED @60 /* S'il est écrit que nous allons échouer, pouvons-nous au moins faire en sorte que ce soit rapide ?! */
+SAY BATTLE_CRY1 @61 /* En avant, prenons la direction de l'absurde ! */
+SAY BATTLE_CRY2 @62 /* Avec vous comme compagnon, mais qui a besoin d'ennemis ? */
+SAY BATTLE_CRY3 @63 /* Notre croisade est tellement vaine. */
+SAY BATTLE_CRY4 @64 /* Votre bêtise vous perdra. */
+SAY BATTLE_CRY5 @65 /* Attendons la mort ! */
 SAY DAMAGE ~~ [O#XAN016]
 SAY DYING ~~ [O#XAN017]
-SAY HURT ~Mes blessures sont trop graves, je suis un homme mort.~ [O#XAN018]
-SAY AREA_FOREST ~La grandeur de la forêt me fait sentir ma petitesse.~ [O#XAN019]
-SAY AREA_CITY ~L'agitation des grandes villes me fait sentir ma dérision.~ [O#XAN020]
-SAY AREA_DUNGEON ~J'ai croupi trop longtemps dans cette horrible cave.~ [O#XAN021]
-SAY AREA_DAY ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN022]
-SAY AREA_NIGHT ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN023]
-SAY SELECT_COMMON1 ~Nous courons tous à la ruine.~ [O#XAN024]
-SAY SELECT_COMMON2 ~La vie est tellement vaine.~ [O#XAN025]
-SAY SELECT_COMMON3 ~Notre quête est perdue d'avance.~ [O#XAN026]
-SAY SELECT_COMMON4 ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN027]
-SAY SELECT_COMMON5 ~Baissons les bras.~ [O#XAN028]
-SAY SELECT_COMMON6 ~Notre croisade est tellement vaine.~ [O#XAN029]
-SAY SELECT_ACTION1 ~Quelle importance ?~ [O#XAN030]
-SAY SELECT_ACTION2 ~Pfff, pourquoi ?~ [O#XAN031]
-SAY SELECT_ACTION3 ~Pourquoi pas.~ [O#XAN032]
-SAY SELECT_ACTION4 ~Tout et n'importe quoi.~ [O#XAN033]
-SAY SELECT_ACTION5 ~C'est peine perdue.~ [O#XAN034]
-SAY SELECT_ACTION6 ~C'est peine perdue.~ [O#XAN035]
-SAY SELECT_ACTION7 ~Je ferai de mon mieux, mais ne vous attendez pas à grand chose.~ [O#XAN036]
-SAY SELECT_RARE1 ~Nous nous leurrons en croyant que notre pitoyable groupe fera le poids face à l'ennemi.~ [O#XAN037]
-SAY SELECT_RARE2 ~Epargnons-nous un vain effort. Baissons les bras et attendons la mort.~ [O#XAN038]
-SAY CRITICAL_HIT ~J'irai même jusqu'à croire que l'on a une chance !~ [O#XAN039]
-SAY CRITICAL_MISS ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN040]
-SAY TARGET_IMMUNE ~C'est peine perdue.~ [O#XAN041]
-SAY INVENTORY_FULL ~C'est peine perdue.~ [O#XAN042]
-SAY SPELL_DISRUPTED ~Lamentable !!~ [O#XAN043]
-SAY BIO ~Lorsque vous l'interrogez sur son passé, XAN vous parle, la nostalgie dans la voix, de son pays d'origine, le fief elfique d'Evereska, ainsi que de son rôle en tant que Grismanteau. Visiblement, il a été envoyé en Amn pour accomplir une mission confiée par son peuple, mais il refuse de vous en parler davantage. D'après ce qu'il a pu évoquer, sa quête semble être de taille, et Xan l'aborde avec une bonne dose d'appréhension. Mais vous avez l'impression qu'il en est de même avec tout. Il a consacré sa vie à accroître sa maîtrise de la magie et est devenu un magicien talentueux. Mais ce zèle lui a laissé peu de temps libre pour se faire des amis ou pour pratiquer d'autres passe-temps. Il semble être très compétent, mais il n'exerce peut-être pas une bonne influence sur le moral du groupe.~
+SAY HURT @68 /* Mes blessures sont trop graves, je suis un homme mort. */
+SAY AREA_FOREST @69 /* La grandeur de la forêt me fait sentir ma petitesse. */
+SAY AREA_CITY @70 /* L'agitation des grandes villes me fait sentir ma dérision. */
+SAY AREA_DUNGEON @71 /* J'ai croupi trop longtemps dans cette horrible cave. */
+SAY AREA_DAY @72 /* Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour. */
+SAY AREA_NIGHT @73 /* Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour. */
+SAY SELECT_COMMON1 @74 /* Nous courons tous à la ruine. */
+SAY SELECT_COMMON2 @75 /* La vie est tellement vaine. */
+SAY SELECT_COMMON3 @76 /* Notre quête est perdue d'avance. */
+SAY SELECT_COMMON4 @77 /* Si j'avais eu besoin de votre avis, je vous l'aurais demandé. */
+SAY SELECT_COMMON5 @78 /* Baissons les bras. */
+SAY SELECT_COMMON6 @79 /* Notre croisade est tellement vaine. */
+SAY SELECT_ACTION1 @80 /* Quelle importance ? */
+SAY SELECT_ACTION2 @81 /* Pfff, pourquoi ? */
+SAY SELECT_ACTION3 @82 /* Pourquoi pas. */
+SAY SELECT_ACTION4 @83 /* Tout et n'importe quoi. */
+SAY SELECT_ACTION5 @84 /* C'est peine perdue. */
+SAY SELECT_ACTION6 @85 /* C'est peine perdue. */
+SAY SELECT_ACTION7 @86 /* Je ferai de mon mieux, mais ne vous attendez pas à grand chose. */
+SAY SELECT_RARE1 @87 /* Nous nous leurrons en croyant que notre pitoyable groupe fera le poids face à l'ennemi. */
+SAY SELECT_RARE2 @88 /* Epargnons-nous un vain effort. Baissons les bras et attendons la mort. */
+SAY CRITICAL_HIT @89 /* J'irai même jusqu'à croire que l'on a une chance ! */
+SAY CRITICAL_MISS @90 /* Si j'avais eu besoin de votre avis, je vous l'aurais demandé. */
+SAY TARGET_IMMUNE @91 /* C'est peine perdue. */
+SAY INVENTORY_FULL @92 /* C'est peine perdue. */
+SAY SPELL_DISRUPTED @93 /* Lamentable !! */
+SAY BIO @94 /* Lorsque vous l'interrogez sur son passé, XAN vous parle, la nostalgie dans la voix, de son pays d'origine, le fief elfique d'Evereska, ainsi que de son rôle en tant que Grismanteau. Visiblement, il a été envoyé en Amn pour accomplir une mission confiée par son peuple, mais il refuse de vous en parler davantage. D'après ce qu'il a pu évoquer, sa quête semble être de taille, et Xan l'aborde avec une bonne dose d'appréhension. Mais vous avez l'impression qu'il en est de même avec tout. Il a consacré sa vie à accroître sa maîtrise de la magie et est devenu un magicien talentueux. Mais ce zèle lui a laissé peu de temps libre pour se faire des amis ou pour pratiquer d'autres passe-temps. Il semble être très compétent, mais il n'exerce peut-être pas une bonne influence sur le moral du groupe. */
 END
 
 AT_NOW ~XanFrenchMini/AudioInstall.bat~
 AT_UNINSTALL ~XanFrenchMini/AudioUninstall.bat~
-
-ACTION_IF FILE_EXISTS ~XanFrenchMini/%LANGUAGE%/ReadMe.txt~ THEN 
-BEGIN
-AT_INTERACTIVE_EXIT ~VIEW XanFrenchMini/%LANGUAGE%/ReadMe.txt~
-END 

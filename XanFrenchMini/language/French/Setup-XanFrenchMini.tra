@@ -1,0 +1,47 @@
+@0 = ~Supprimer tous les autres fichiers audio de Xan qui sont en anglais, y compris les fichiers audio pour les banters et pour les romances~
+@1 = ~Soundset en francais de BG1 pour Xan, PNJ pour BG2~
+
+
+@51   = ~Xan~
+
+@53   = ~Nous sommes tous perdus, fuyons tant qu'il est encore temps.~ [O#XAN003]
+@54   = ~Peut-être survivrons-nous plus longtemps que je ne l'aurais cru.~ [O#XAN004]
+@55   = ~Ce groupe est particulièrement lamentable aujourd'hui !~ [O#XAN005]
+@56   = ~Continuons à nous comporter aussi mal et nous mériterons notre perdition.~ [O#XAN006]
+@57   = ~Je ne peux pas souscrire à ces actes ! Je dois me retirer de cette assemblée de barbares.~ [O#XAN007]
+@58   = ~Tant que je serai responsable du groupe, je m'engage à ce que nous ne nous fassions pas TOUS tuer.~ [O#XAN008]
+@59   = ~Je tomberai de fatigue avant d'avoir le temps de m'effondrer sur le champ de bataille.~ [O#XAN009]
+@60   = ~S'il est écrit que nous allons échouer, pouvons-nous au moins faire en sorte que ce soit rapide ?!~ [O#XAN010]
+@61   = ~En avant, prenons la direction de l'absurde !~ [O#XAN011]
+@62   = ~Avec vous comme compagnon, mais qui a besoin d'ennemis ?~ [O#XAN012]
+@63   = ~Notre croisade est tellement vaine.~ [O#XAN013]
+@64   = ~Votre bêtise vous perdra.~ [O#XAN014]
+@65   = ~Attendons la mort !~ [O#XAN015]
+
+@68   = ~Mes blessures sont trop graves, je suis un homme mort.~ [O#XAN018]
+@69   = ~La grandeur de la forêt me fait sentir ma petitesse.~ [O#XAN019]
+@70   = ~L'agitation des grandes villes me fait sentir ma dérision.~ [O#XAN020]
+@71   = ~J'ai croupi trop longtemps dans cette horrible cave.~ [O#XAN021]
+@72   = ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN022]
+@73   = ~Le soleil brille, et je m'étonne que nous soyons encore là pour assister à un nouveau jour.~ [O#XAN023]
+@74   = ~Nous courons tous à la ruine.~ [O#XAN024]
+@75   = ~La vie est tellement vaine.~ [O#XAN025]
+@76   = ~Notre quête est perdue d'avance.~ [O#XAN026]
+@77   = ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN027]
+@78   = ~Baissons les bras.~ [O#XAN028]
+@79   = ~Notre croisade est tellement vaine.~ [O#XAN029]
+@80   = ~Quelle importance ?~ [O#XAN030]
+@81   = ~Pfff, pourquoi ?~ [O#XAN031]
+@82   = ~Pourquoi pas.~ [O#XAN032]
+@83   = ~Tout et n'importe quoi.~ [O#XAN033]
+@84   = ~C'est peine perdue.~ [O#XAN034]
+@85   = ~C'est peine perdue.~ [O#XAN035]
+@86   = ~Je ferai de mon mieux, mais ne vous attendez pas à grand chose.~ [O#XAN036]
+@87   = ~Nous nous leurrons en croyant que notre pitoyable groupe fera le poids face à l'ennemi.~ [O#XAN037]
+@88   = ~Epargnons-nous un vain effort. Baissons les bras et attendons la mort.~ [O#XAN038]
+@89   = ~J'irai même jusqu'à croire que l'on a une chance !~ [O#XAN039]
+@90   = ~Si j'avais eu besoin de votre avis, je vous l'aurais demandé.~ [O#XAN040]
+@91   = ~C'est peine perdue.~ [O#XAN041]
+@92   = ~C'est peine perdue.~ [O#XAN042]
+@93   = ~Lamentable !!~ [O#XAN043]
+@94   = ~Lorsque vous l'interrogez sur son passé, XAN vous parle, la nostalgie dans la voix, de son pays d'origine, le fief elfique d'Evereska, ainsi que de son rôle en tant que Grismanteau. Visiblement, il a été envoyé en Amn pour accomplir une mission confiée par son peuple, mais il refuse de vous en parler davantage. D'après ce qu'il a pu évoquer, sa quête semble être de taille, et Xan l'aborde avec une bonne dose d'appréhension. Mais vous avez l'impression qu'il en est de même avec tout. Il a consacré sa vie à accroître sa maîtrise de la magie et est devenu un magicien talentueux. Mais ce zèle lui a laissé peu de temps libre pour se faire des amis ou pour pratiquer d'autres passe-temps. Il semble être très compétent, mais il n'exerce peut-être pas une bonne influence sur le moral du groupe.~
