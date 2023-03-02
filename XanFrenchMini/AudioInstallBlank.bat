@@ -1,3 +1,5 @@
+del override\O#XAN001.wav
+del override\O#XAN002.wav
 del override\O#XAN1*.wav
 del override\O#XAN2*.wav
 del override\O#XAN05*.wav
